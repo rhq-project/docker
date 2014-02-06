@@ -1,0 +1,4 @@
+= docker
+
+This repository contains some RHQ-supporting bits around Docker, like
+a Dockerfile to get started with RHQ and so on.
