@@ -1,11 +1,15 @@
 FROM jboss/base-jdk:7
 
-MAINTAINER  Armine Hovsepyan ahovsepy@redhat.com, Viet Nguyen vnguyen@redhat.com
+MAINTAINER  Armine Hovsepyan ahovsepy@redhat.com
 
 USER root
 
-RUN yum install -y docker-io
+RUN yum install -y unzip wget
 
-ADD rhq-docker-deploy.sh /usr/local/bin/rhq-docker-deploy.sh
+RUN wget http://sourceforge.net/projects/rhq/files/rhq/rhq-4.10/rhq-server-4.10.0.zip/download -O /opt/rhq-server-4.10.0.zip
 
-ENTRYPOINT ["/usr/local/bin/rhq-docker-deploy.sh"]
+ADD rhq-nodb-deploy.sh /usr/local/bin/rhq-nodb-deploy.sh
+
+EXPOSE 7080
+
+CMD ["/usr/local/bin/rhq-nodb-deploy.sh"]

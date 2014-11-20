@@ -1,15 +1,13 @@
-Docker image for RHQ
+rhq_nodb
+========
 
-=========================
+RHQ (without DB) contianer repository
 
-Description
+Demo how RHQ Dockerfile works https://plus.google.com/u/0/events/clp274bhmdfvi4ol7csh2fd7n38?authkey=CPGuh8eZtrG5oAE
 
-RHQ Image built on top of rhq-nodb image linked with postgresql image
-See: ahovsepy/rhq-nodb , vnguyen/rhq-psql
+To build and run rhq docker container:
 
-Usage
+1. Install docker-io $ yum -y install docker-io 
+2. Build rhq image from Dockerfile $ ./build.sh 
 
-1. Build RHQ Image -- build.sh -- builds image from Dockerfile
-2. Run image -- run.sh -- runs rhq image container linked with rhq-psql container
-3. Cleanup -- cleanup.sh -- kills running rhq and rhq-psql image containers
-4. Purge -- purge.sh -- removes existing rhq-nodb, rhq-psql and rhq images
+rhq should be linked to postgresql container 

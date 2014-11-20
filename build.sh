@@ -1,1 +1,4 @@
-docker build -t jboss/rhq .
+# build rhq docker image from Dockerfile 
+
+docker build -t rhq_nodb .
+
