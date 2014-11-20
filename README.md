@@ -11,3 +11,6 @@ To build and run rhq docker container:
 2. Build rhq image from Dockerfile $ ./build.sh 
 
 rhq should be linked to postgresql container 
+
+1. docker run -i -t -d –name rhq_db vnguyen/rhq-psql
+2. docker run -i -t -d -p 7080:7080 –name rhq_server –link rhq_db:db rhqproject/rhq-nodb
