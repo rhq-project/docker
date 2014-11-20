@@ -2,9 +2,9 @@
 # Credit: https://github.com/shipyard/shipyard-deploy/
 # See also: https://github.com/vnugent/rhq-psql-docker
 echo "Setup starting ..."
-unzip -q -d /opt /opt/rhq-server-4.12.0.zip
+unzip -q -d /opt /opt/rhq-server-4.11.0.zip
 DB_SERVER=${DB_PORT_5432_TCP_ADDR}
-RHQ_HOME=/opt/rhq-server-4.12.0
+RHQ_HOME=/opt/rhq-server-4.11.0
 
 if [ ! -z $DB_SERVER ];
 then
