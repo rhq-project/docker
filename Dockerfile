@@ -1,6 +1,6 @@
 FROM jboss/base-jdk:7
 
-MAINTAINER  Armine Hovsepyan ahovsepy@redhat.com
+MAINTAINER  Armine Hovsepyan ahovsepy@redhat.com, Viet Nguyen vnguyen@redhat.com
 
 USER root
 
