@@ -2,9 +2,7 @@
 # Credit: https://github.com/shipyard/shipyard-deploy/
 # See also: https://github.com/vnugent/rhq-psql-docker
 echo "Setup starting ..."
-unzip -q -d /opt /opt/rhq-server-4.12.0.zip
 DB_SERVER=${DB_PORT_5432_TCP_ADDR}
-RHQ_HOME=/opt/rhq-server-4.12.0
 
 if [ ! -z $DB_SERVER ];
 then
@@ -16,7 +14,8 @@ then
 fi
 sed -i 's;^jboss\.bind\.address.*$;jboss.bind.address=0.0.0.0;g' ${RHQ_HOME}/bin/rhq-server.properties
 
-${RHQ_HOME}/bin/rhqctl install --server --storage --start
+${RHQ_HOME}/bin/rhqctl install 
+${RHQ_HOME}/bin/rhqctl start
 
 tail -F ${RHQ_HOME}/logs/server.log
 
