@@ -4,7 +4,7 @@ FROM jboss/base-jdk:7
 MAINTAINER  Armine Hovsepyan ahovsepy@redhat.com, Viet Nguyen vnguyen@redhat.com
 
 # Set RHQ_VERSIOB env variable
-ENV RHQ_VERSION 4.13
+ENV RHQ_VERSION 4.10
 
 # Add rhq-nodb-deploy script to container
 ADD rhq-nodb-deploy.sh /opt/jboss/rhq-nodb-deploy.sh
