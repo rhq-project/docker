@@ -14,7 +14,10 @@ then
 fi
 sed -i 's;^jboss\.bind\.address.*$;jboss.bind.address=0.0.0.0;g' ${RHQ_HOME}/bin/rhq-server.properties
 
-${RHQ_HOME}/bin/rhqctl install 
+# provide autoinstall default password for user rhqadmin as rhqadmin:
+sed -i 's;^rhq\.autoinstall\.server\.admin\.password.*$;rhq.autoinstall.server.admin.password=x1XwrxKuPvYUILiOnOZTLg==;g' ${RHQ_HOME}/bin/rhq-server.properties
+
+${RHQ_HOME}/bin/rhqctl install
 ${RHQ_HOME}/bin/rhqctl start
 
 tail -F ${RHQ_HOME}/logs/server.log
